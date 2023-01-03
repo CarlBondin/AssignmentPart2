@@ -1,0 +1,45 @@
+GLOBAL {
+	VARIABLES {
+		int noOfAlerts = 0;
+		int noOfAlertsShown = 0;
+	}
+	
+	EVENTS {
+		accessAlerts() = {*.accessingAlerts()}
+		addAlert() = {*.postRequest()}
+		deleteAlerts() = {*.deleteRequest()}
+		badPostRequest() = {*.badPostRequest()}
+		badDeleteRequest() = {*.badDeleteRequest()}
+	}
+	
+	PROPERTY alertSystem {
+		STATES{
+			BAD{
+				postError
+				deleteError
+			}
+			
+			NORMAL{
+				myAlerts
+				alertAdded
+				alertsDeleted
+			}
+			STARTING{
+				loggedIn
+			}
+		}
+		
+		TRANSITIONS{
+			loggedIn -> myAlerts [accessAlerts\\]
+			myAlerts -> alertAdded [addAlert\\noOfAlerts++; System.out.println("Number of Alerts:" + noOfAlerts);]
+			alertAdded -> alertAdded [addAlert\\noOfAlerts++; System.out.println("Number of Alerts:" + noOfAlerts);]
+			alertAdded -> myAlerts [accessAlerts\\System.out.println("Number of Alerts:" + noOfAlerts);]
+			alertAdded -> postError [badPostRequest\\]
+			postError -> myAlerts [accessAlerts\\]
+			myAlerts -> deleteError [badDeleteRequest\\]
+			deleteError -> myAlerts [accessAlerts\\]
+			myAlerts -> alertsDeleted [deleteAlerts\\noOfAlerts=0; System.out.println("Number of Alerts:" + noOfAlerts);]
+			alertsDeleted -> myAlerts [accessAlerts\\ System.out.println("Number of Alerts:" + noOfAlerts);]
+		}
+	}
+}

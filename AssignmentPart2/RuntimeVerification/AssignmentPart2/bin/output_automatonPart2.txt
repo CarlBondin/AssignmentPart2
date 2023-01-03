@@ -1,0 +1,42 @@
+[alertSystem]AUTOMATON::> alertSystem() STATE::>loggedIn
+[alertSystem]AUTOMATON::> alertSystem() STATE::>loggedIn
+[alertSystem]MOVED ON METHODCALL: int main.Runner.accessingAlerts() TO STATE::> myAlerts
+[alertSystem]AUTOMATON::> alertSystem() STATE::>myAlerts
+Number of Alerts:1
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:2
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:3
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:4
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:5
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:6
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:7
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:8
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+Number of Alerts:9
+[alertSystem]MOVED ON METHODCALL: int main.Runner.postRequest() TO STATE::> alertAdded
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertAdded
+[alertSystem]MOVED ON METHODCALL: int main.Runner.badPostRequest() TO STATE::> !!!SYSTEM REACHED BAD STATE!!! postError 
+aspects._asp_automatonPart20.ajc$before$aspects__asp_automatonPart20$3$3aeb94b7(_asp_automatonPart20.aj:30)
+main.Runner.main(Runner.java:124) 
+[alertSystem]AUTOMATON::> alertSystem() STATE::>postError
+[alertSystem]MOVED ON METHODCALL: int main.Runner.accessingAlerts() TO STATE::> myAlerts
+[alertSystem]AUTOMATON::> alertSystem() STATE::>myAlerts
+Number of Alerts:0
+[alertSystem]MOVED ON METHODCALL: int main.Runner.deleteRequest() TO STATE::> alertsDeleted
+[alertSystem]AUTOMATON::> alertSystem() STATE::>alertsDeleted
+Number of Alerts:0
+[alertSystem]MOVED ON METHODCALL: int main.Runner.accessingAlerts() TO STATE::> myAlerts

@@ -1,0 +1,17 @@
+digraph _logic_alertSystem {
+rankdir=LR;
+node [shape = circle]; myAlerts alertAdded alertsDeleted loggedIn;
+node [shape = octagon]; postError deleteError;
+node [shape = point]; _s_s;
+_s_s -> loggedIn;
+alertAdded -> alertAdded [ label = "(1) addAlert\\\\noOfAlerts ++ ; System . out . println ( \" Number of Alerts: \" + noOfAlerts ) ; "];
+alertAdded -> myAlerts [ label = "(2) accessAlerts\\\\System . out . println ( \" Number of Alerts: \" + noOfAlerts ) ; "];
+alertAdded -> postError [ label = "(3) badPostRequest"];
+alertsDeleted -> myAlerts [ label = "(1) accessAlerts\\\\System . out . println ( \" Number of Alerts: \" + noOfAlerts ) ; "];
+loggedIn -> myAlerts [ label = "(1) accessAlerts"];
+postError -> myAlerts [ label = "(1) accessAlerts"];
+myAlerts -> alertAdded [ label = "(1) addAlert\\\\noOfAlerts ++ ; System . out . println ( \" Number of Alerts: \" + noOfAlerts ) ; "];
+myAlerts -> deleteError [ label = "(2) badDeleteRequest"];
+myAlerts -> alertsDeleted [ label = "(3) deleteAlerts\\\\noOfAlerts = 0 ; System . out . println ( \" Number of Alerts: \" + noOfAlerts ) ; "];
+deleteError -> myAlerts [ label = "(1) accessAlerts"];
+}
